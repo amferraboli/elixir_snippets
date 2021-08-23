@@ -1,3 +1,11 @@
+words_per_letter = [
+    a: %{words: ["Atenciosa", "Agradável", "Amável", "Animada", "Amigável", "Alegre", "Admirável"]},
+    b: %{words: ["Brilhante", "Boa", "Bonita", "Bondosa", "Bela", "Bacana"]},
+    c: %{words: ["Calorosa", "Camarada", "Capaz", "Carinhosa", "Carismática", "Charmosa", "Companheira", "Competente", "Criativa", "Cuidadosa"]},
+    d: %{words: ["Divertida", "Dedicada", "Destemida", "Doce", "Deslumbrante"]},
+
+  ]
+
 defmodule Name_acrostic do
     def get_name() do
         String.trim(IO.gets("Qual é o seu nome?"))
