@@ -14,12 +14,12 @@ defmodule Util do
     end
 
     def print_type(self) do
-        IO.puts("#{self} é do tipo: " <> Util.typeof(self))
+        IO.puts("#{self} is of type: " <> Util.typeof(self))
         :timer.sleep(2000)
     end
 
     def print_inspect_type(self) do
-        IO.puts("#{inspect(self)} é do tipo: " <> Util.typeof(self))
+        IO.puts("#{inspect(self)} is of type: " <> Util.typeof(self))
         :timer.sleep(2000)
     end
 
@@ -35,7 +35,7 @@ type_tuple = {42, "elixir"}
 type_function = fn a, b -> a + b end
 function_string = "fn a, b -> a + b end"
 
-IO.puts("Tipos em Elixir\n")
+IO.puts("Types in Elixir\n")
 for n <- [type_integer, type_float, type_boolean], do: Util.print_type(n)
 for n <- [type_string, type_atom, type_list, type_tuple], do: Util.print_inspect_type(n)
 
