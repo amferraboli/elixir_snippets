@@ -22,24 +22,28 @@ defmodule Calculator do
     x/y
   end
 
-  def calculate(operation, x, y) when operation == "Sum" do
+  def calculate("Sum", x, y) do
     sum(x,y)
   end
 
-  def calculate(operation, x, y) when operation == "Sub" do
+  def calculate("Sub", x, y) do
     difference(x,y)
   end
 
-  def calculate(operation, x, y) when operation == "Mul" do
+  def calculate("Mul", x, y) do
     product(x,y)
   end
 
-  def calculate(operation, x, y) when operation == "Div" do
+  def calculate("Div", x, y) do
     quotient(x,y)
   end
 
-  def calculate(operation, x, y) when operation == "Pow" do
+  def calculate("Pow", x, y) do
     power(x,y)
+  end
+
+  def calculate(_, x, y) do
+    {:error, "Invalid operation"}
   end
 end
 
@@ -68,28 +72,38 @@ defmodule Welcome do
 end
 
 defmodule Operation do
-  def choose_parameters do
-    number_1 = "What is the first number of your operation?"
+  def choose_number_1 do
+    "What is the first number of your operation?"
     #to do: type check valid number
     |>IO.gets()
     |>String.trim()
     |>Float.parse()
-    {value_1, _} = number_1
+    |> elem(0)
+  end
 
-    operation = "What operation do you want to perform? Choose one of the following Sum, Sub, Mul, Div or Pow."
+  def choose_operation do
+    "What operation do you want to perform? Choose one of the following Sum, Sub, Mul, Div or Pow."
     |>IO.gets()
     |>String.trim()
     |>String.capitalize()
+  end
 
-    number_2 = "What is the second number of your operation?"
+  def choose_number_2 do
+    "What is the second number of your operation?"
     #to do: type check valid number
     |>IO.gets()
     |>String.trim()
     |>Float.parse()
-    {value_2, _} = number_2
+    |> elem(0)
+  end
 
-  result = Calculator.calculate(operation, value_1, value_2)
-  IO.puts("Your result is #{result}")
+  def result do
+    number_1 = choose_number_1()
+    operation = choose_operation()
+    number_2 = choose_number_2()
+    check_zero_div(operation, number_2)
+    result = Calculator.calculate(operation, number_1, number_2)
+    IO.puts("Your result is #{result}")
   end
 end
 
@@ -112,7 +126,7 @@ end
 
 defmodule CompleteOperation do
   def complete_operation do
-    Operation.choose_parameters()
+    Operation.result()
     NextStep.end_of_operation()
     |>NextStep.next_step_choice()
     end
