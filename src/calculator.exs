@@ -18,7 +18,6 @@ defmodule Calculator do
   end
 
   def quotient(x, y) do
-    # to do: div by zero guard
     x / y
   end
 
@@ -88,8 +87,8 @@ defmodule Operation do
   end
 
   def choose_operation do
-    # "What operation do you want to perform? Choose one of the following Sum, Sub, Mul, Div or Pow."
     "What operation do you want to perform? [Sum, Sub, Mul, Div or Pow] "
+    #to do: check valid operation
     |> IO.gets()
     |> String.trim()
     |> String.capitalize()
