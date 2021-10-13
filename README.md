@@ -1,7 +1,7 @@
 # Elixir Snippets
 
 This repo stores small Elixir programs.  
-The objetive is to feed this repo with practical snippets to support the learning of Elixir language :D
+The creation of simple and practical snippets support the learning of Elixir language.
 
 ## Contents
 1. [Hello World](src/hello_world.exs)
