@@ -82,19 +82,20 @@ defmodule Operation do
     operation
   end
 
-  def choose_number(n) do
+  def choose_number(message) do
     n =
-      String.trim(n)
+      IO.gets(message)
+      |> String.trim()
 
     case Float.parse(n) do
       :error ->
         IO.puts("Sorry, invalid number. Please, choose another number.")
-        choose_number_1()
+        choose_number(message)
       {n_parsed, ""} ->
         n_parsed
       {_, _} ->
         IO.puts("Sorry, invalid number. Please, choose another number.")
-        choose_number_1()
+        choose_number(message)
     end
   end
 
@@ -107,15 +108,11 @@ defmodule Operation do
   end
 
   def choose_number_1 do
-    "What is the first number of your operation? "
-    |> IO.gets()
-    |> choose_number()
+    choose_number("What is the first number of your operation? ")
   end
 
   def choose_number_2 do
-    "What is the second number of your operation? "
-    |> IO.gets()
-    |> choose_number()
+    choose_number("What is the second number of your operation? ")
   end
 
   def result do
