@@ -46,10 +46,6 @@ defmodule Calculator do
   def calculate("Pow", x, y) do
     power(x, y)
   end
-
-  def calculate(_, _, _) do
-    {:error, "Invalid operation"}
-  end
 end
 
 defmodule Timer do
@@ -77,29 +73,49 @@ defmodule Welcome do
 end
 
 defmodule Operation do
-  def choose_number_1 do
-    "What is the first number of your operation? "
-    # to do: type check valid number
-    |> IO.gets()
-    |> String.trim()
-    |> Float.parse()
-    |> elem(0)
+  def validate_operation(operation) when operation not in ["Sum", "Sub", "Mul", "Div", "Pow"] do
+    IO.puts("Sorry, invalid operation. Please, choose another operation.")
+    choose_operation()
+  end
+
+  def validate_operation(operation) do
+    operation
+  end
+
+  def choose_number(n) do
+    n =
+      String.trim(n)
+
+    case Float.parse(n) do
+      :error ->
+        IO.puts("Sorry, invalid number. Please, choose another number.")
+        choose_number_1()
+      {n_parsed, ""} ->
+        n_parsed
+      {_, _} ->
+        IO.puts("Sorry, invalid number. Please, choose another number.")
+        choose_number_1()
+    end
   end
 
   def choose_operation do
     "What operation do you want to perform? [Sum, Sub, Mul, Div or Pow] "
-    #to do: check valid operation
     |> IO.gets()
     |> String.trim()
     |> String.capitalize()
+    |> validate_operation()
+  end
+
+  def choose_number_1 do
+    "What is the first number of your operation? "
+    |> IO.gets()
+    |> choose_number()
   end
 
   def choose_number_2 do
     "What is the second number of your operation? "
     |> IO.gets()
-    |> String.trim()
-    |> Float.parse()
-    |> elem(0)
+    |> choose_number()
   end
 
   def result do
