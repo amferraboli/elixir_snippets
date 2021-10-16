@@ -39,4 +39,4 @@ IO.puts("Types in Elixir\n")
 for n <- [type_integer, type_float, type_boolean], do: Util.print_type(n)
 for n <- [type_string, type_atom, type_list, type_tuple], do: Util.print_inspect_type(n)
 
-IO.puts("#{inspect(function_string)} é do tipo: " <> Util.typeof(type_function))
+IO.puts("#{inspect(function_string)} is of type: " <> Util.typeof(type_function))
