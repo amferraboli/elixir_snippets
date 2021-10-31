@@ -11,4 +11,4 @@ Inside the folder, run:
 
 ## Documentation
 
-You can access the module and methods documenation with `h` inside `iex`.
+You can access the module and methods documentation with `h` inside `iex`.
