@@ -13,6 +13,7 @@ Below you can find a list of simple programs stored in scripts.
 2. [Elixir Types](src/types.exs)
 3. [Calculator](src/calculator.exs)
 4. [Calculator with Unit Test](src/calculator/)
+5. [Average Calculator](src/average_calculator)
 
 ## Authors
 [@amferraboli](https://github.com/amferraboli) and [@brendalf](https://github.com/brendalf)
