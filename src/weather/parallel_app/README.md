@@ -8,10 +8,10 @@ Inside the folder, run:
 `$ iex -S mix`
 `$ ParallelApp.Weather.temperature_of "Rio de Janeiro"`
 
-You can also run for multiple cities with:
+You can also run for multiple locations with:
 `$ iex -S mix`
-`$ cities = ["Rio de Janeiro", "Niteroi", "Sao Paulo", "Porto Alegre"]`
-`$ ParallelApp.start(cities)`
+`$ locations = ["Vila Mariana, Sao Paulo", "Sao Paulo", "Brazil", "Rio de Janeiro", "Porto Alegre"]`
+`$ ParallelApp.start(locations)`
 
 ## Documentation
 
