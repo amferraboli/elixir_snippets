@@ -5,7 +5,6 @@ It was created with the objetive of supporting the learning of Elixir language t
 
 Below you can find a list of simple programs stored in scripts.
 
-#to do: how to run the snippets
 #to do: add Elixir features used in each snippet
 
 ## Contents
