@@ -1,0 +1,18 @@
+# WeatherApp
+
+Weather application.
+
+## How to Run
+
+Inside the folder, run:
+`$ iex -S mix`
+`$ App.Weather.temperature_of "Rio de Janeiro"`
+
+You can also run for multiple locations with:
+`$ iex -S mix`
+`$ locations = ["Vila Mariana, Sao Paulo", "Sao Paulo", "Brazil", "Rio de Janeiro", "Porto Alegre"]`
+`$ App.start(locations)`
+
+## Documentation
+
+You can access the module and methods documentation with `h` inside `iex`.
